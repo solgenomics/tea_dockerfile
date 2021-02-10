@@ -1,0 +1,59 @@
+#organism
+organism_species: Solanum lycopersicum
+organism_variety: M82
+organism_description: Tomato M82
+# organism - end
+
+#project
+project_name: S. lycopersicum M82 Fruit Development
+project_contact: Jocelyn Rose
+project_description: Fruit development from anthsis to red ripe for whole fruit and for the cell types from the pericarp obtained by Laser Capture Microdissected (LCM) 
+expr_unit: RPM
+index_dir_name: tomato_index
+# project - end
+
+# figure --- All info needed for a cluster of images (usually includes a stage and all its tissues). Copy this block as many times as you need (including as many tissue layer blocks as you need).
+figure_name: 10DPA Total Pericarp
+conditions: condition 1, condition 2
+# write figure metadata
+
+#stage layer
+layer_name: 10DPA
+layer_description: Ten days post anthesis
+layer_type: stage
+bg_color:
+layer_image: slm82_fruit_10dpa_bg.png
+image_width: 250
+image_height: 500
+cube_ordinal: 10
+img_ordinal: 10
+organ: fruit
+# layer - end
+
+#tissue layer
+layer_name: Pericarp
+layer_description: 
+layer_type: tissue
+bg_color:
+layer_image: pericarp.png
+image_width: 250
+image_height: 500
+cube_ordinal: 100
+img_ordinal: 100
+organ: fruit
+# layer - end
+
+#tissue layer
+layer_name: seeds
+layer_description: 
+layer_type: tissue
+bg_color:
+layer_image: seeds.png
+image_width: 250
+image_height: 500
+cube_ordinal: 110
+img_ordinal: 110
+organ: fruit
+# layer - end
+
+# figure - end

@@ -1,0 +1,31 @@
+version: '3.7'
+services:
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    environment:
+      - POSTGRES_USER=eauser
+      - POSTGRES_PASSWORD=eapassword
+      - POSTGRES_DB=ea
+    volumes:
+      - ./data/docker-db-scripts:/docker-entrypoint-initdb.d
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  web:
+    build: .
+    command: perl script/tea_server.pl -r -d --fork
+    image: expression_atlas_docker_web
+    restart: always
+    volumes:
+      - ./data/ea/tea_local.conf:/home/production/Tea/tea_local.conf
+    ports:
+      - "3000:3000"
+    environment:
+    - PERL5LIB=/home/production/local-lib/lib/perl5:.
+    depends_on:
+      - db
+
